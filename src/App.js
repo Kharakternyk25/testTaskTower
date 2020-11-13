@@ -19,12 +19,12 @@ function App() {
   }, [dispatch])
 
   useEffect(() => {
-    function pickRandomContact() {
+    function pickRandomUser() {
       const randomNumber = Math.floor(Math.random() * quantity)
       const newRandomUser = `${userList[randomNumber].surname} ${userList[randomNumber].name}`
       return newRandomUser
     }
-    let timer = setInterval(() => setRandomUser(pickRandomContact()), 8000)
+    let timer = setInterval(() => setRandomUser(pickRandomUser()), 8000)
     return () => clearInterval(timer)
   }, [userList, quantity])
 
